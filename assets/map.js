@@ -53,6 +53,52 @@ function el(name, attrs = {}, parent) {
   return node;
 }
 
+// 朝聖之路的黃色箭頭（朝 +x 方向、中心在原點）
+const ARROW_D = "M-10,-2.6 L2,-2.6 L2,-7 L11,0 L2,7 L2,2.6 L-10,2.6 Z";
+
+// 藍底黃貝殼路標：線條從左側一點放射到右側弧線
+function scallopTile(parent, x, y, size) {
+  const g = el("g", { transform: `translate(${x} ${y})`, class: "scallop" }, parent);
+  const h = size / 2;
+  el("rect", { x: -h, y: -h, width: size, height: size, rx: size * 0.16, fill: "var(--camino-blue)", stroke: "#fff", "stroke-width": size * 0.06 }, g);
+  const ox = -h * 0.62, r = size * 0.66;
+  let d = "";
+  for (let i = 0; i < 9; i++) {
+    const a = (-40 + i * 10) * Math.PI / 180;
+    d += `M${ox},0 L${ox + r * Math.cos(a)},${r * Math.sin(a)} `;
+  }
+  el("path", { d, stroke: "var(--camino-yellow)", "stroke-width": size * 0.07, "stroke-linecap": "round", fill: "none" }, g);
+  return g;
+}
+
+// 頁面用的小黃箭頭（HTML 內嵌 SVG）
+function arrowIcon(back) {
+  const svg = el("svg", { viewBox: "-12 -9 25 18", class: "yarrow" + (back ? " yarrow--back" : ""), "aria-hidden": "true" });
+  el("path", { d: ARROW_D, fill: "var(--camino-yellow)", stroke: "var(--ink)", "stroke-width": 1.2, "stroke-linejoin": "round" }, svg);
+  return svg;
+}
+
+// 取折線一半長度處的位置；方向用前後各 10% 長度的兩點算，避免被路口的小轉彎帶歪
+function pointAt(pts, seg, dist) {
+  for (let i = 0; i < seg.length; i++) {
+    if (dist <= seg[i] && seg[i] > 0) {
+      const t = dist / seg[i], a = pts[i], b = pts[i + 1];
+      return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+    }
+    dist -= seg[i];
+  }
+  return pts[pts.length - 1];
+}
+
+function midpointDir(pts) {
+  const seg = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]));
+  const total = seg.reduce((a, b) => a + b, 0);
+  if (!total) return null;
+  const [x, y] = pointAt(pts, seg, total * 0.5);
+  const a = pointAt(pts, seg, total * 0.4), b = pointAt(pts, seg, total * 0.6);
+  return { x, y, deg: Math.atan2(b[1] - a[1], b[0] - a[0]) * 180 / Math.PI };
+}
+
 function svgText(parent, x, y, text, attrs) {
   const t = el("text", { x, y, ...attrs }, parent);
   t.textContent = text;
@@ -127,7 +173,8 @@ function drawMap(container, { site, base }, opts = {}) {
   site.stages.forEach((s) => {
     const pts = stagePoints(s, site);
     if (!pts) return;
-    const d = smoothPath(pts.map((p) => proj(...p)));
+    const xy = pts.map((p) => proj(...p));
+    const d = smoothPath(xy);
     const a = el("a", { href: `stage.html?s=${s.id}`, class: `seg seg--${s.mode}` + (focus && focus.id !== s.id ? " seg--dim" : "") + (focus && focus.id === s.id ? " seg--on" : ""), "data-id": s.id }, routes);
     const title = el("title", {}, a);
     title.textContent = `${s.label}　${s.title}`;
@@ -135,6 +182,11 @@ function drawMap(container, { site, base }, opts = {}) {
     el("path", { d, class: "seg-line", "stroke-width": 3.4 * u, ...(s.mode === "bus" ? { "stroke-dasharray": `${2 * u} ${7 * u}` } : {}), filter: "url(#rough)" }, a);
     el("path", { d, class: "seg-hit", "stroke-width": 22 * u }, a);
     segs[s.id] = a;
+    const m = s.mode === "walk" && midpointDir(xy);
+    if (m) {
+      el("path", { d: ARROW_D, class: "arrow" + (focus && focus.id !== s.id ? " arrow--dim" : ""), "stroke-width": 1.1,
+        transform: `translate(${m.x} ${m.y}) rotate(${m.deg}) scale(${0.85 * u})` }, routes);
+    }
   });
 
   // 站點
@@ -142,10 +194,12 @@ function drawMap(container, { site, base }, opts = {}) {
   for (const key of Object.keys(site.places)) {
     const p = site.places[key];
     const [x, y] = proj(p.lat, p.lon);
-    const g = el("g", { class: "stop" + (key === "santiago" ? " stop--goal" : "") }, stops);
-    el("circle", { cx: x, cy: y, r: (key === "santiago" ? 6.5 : 4.2) * u }, g);
+    const g = el("g", { class: "stop" }, stops);
+    const goal = key === "santiago";
+    if (goal) scallopTile(g, x, y, 17 * u);
+    else el("circle", { cx: x, cy: y, r: 4.2 * u }, g);
     const left = LABEL_LEFT.has(key);
-    svgText(g, x + (left ? -9 : 9) * u, y + 5 * u, p.name, { "text-anchor": left ? "end" : "start", "font-size": (key === "santiago" ? 21 : 17) * u, class: "stop-label" });
+    svgText(g, x + (left ? -9 : goal ? 14 : 9) * u, y + 5 * u, p.name, { "text-anchor": left ? "end" : "start", "font-size": (key === "santiago" ? 21 : 17) * u, class: "stop-label" });
   }
 
   if (opts.onHover) {

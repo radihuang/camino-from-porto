@@ -36,13 +36,14 @@
 
   const pager = document.getElementById("pager");
   const prev = site.stages[stage.index - 1], next = site.stages[stage.index + 1];
-  for (const [s, cls, hint] of [[prev, "prev", "← 上一段"], [next, "next", "下一段 →"]]) {
+  for (const [s, cls, hint] of [[prev, "prev", "上一段"], [next, "next", "下一段"]]) {
     if (!s) continue;
     const a = document.createElement("a");
     a.className = cls;
     a.href = `stage.html?s=${s.id}`;
     const small = document.createElement("small");
-    small.textContent = hint;
+    if (cls === "prev") small.append(arrowIcon(true), hint);
+    else small.append(hint, arrowIcon(false));
     a.append(small, `${s.label}　${s.title}`);
     pager.append(a);
   }
