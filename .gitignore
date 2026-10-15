@@ -3,3 +3,5 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 photos/_inbox/
+# 原始素材（含 GPS），只放本機，處理後的版本才進版控
+photos/[0-9][0-9]_*/

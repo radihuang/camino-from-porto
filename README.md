@@ -19,25 +19,33 @@ python3 -m http.server 8731
 | --- | --- |
 | `data/stages.json` | 每一段的基本資料：日期、標題、公里數、終點站、`ready`（是否已整理） |
 | `stages/<id>.md` | 每一段的內容，一段一個檔 |
-| `photos/<id>/` | 照片（建議長邊 1920px）；`photos/<id>/thumbs/` 放縮圖，沒有縮圖會自動用原圖 |
+| `photos/01_Porto-Labruge/` 這類「數字_」開頭的資料夾 | **原始素材**，含 GPS，只留本機、不進版控 |
+| `photos/<id>/` | 處理後的照片（長邊 1920px、已清 EXIF）；`thumbs/` 是縮圖 |
+| `videos/<id>/` | 處理後的短片（720p、已清中繼資料）＋同名 `.jpg` 封面 |
 | `data/basemap.json` | 地圖底圖（海岸線、河流、國界），由 `scripts/build_basemap.py` 產生，平常不用動 |
 
 ## 新增一段的內容
 
-1. 照片放進 `photos/day03/`（例如 `photos/day03/IMG_1234.jpg`）
-2. 新增 `stages/day03.md`，格式照 `stages/day01.md`
-3. 在 `data/stages.json` 把那一段的 `"ready": false` 改成 `true`
-4. 檢查：`uv run python scripts/check_content.py`
-5. `git add -A && git commit -m "Day 3 內容" && git push`
+1. 原始照片和影片放進 `photos/03_Rates-Barcelos/`（資料夾名稱要「兩位數字_」開頭，才會被排除在版控外）
+2. 處理：`uv run python scripts/prepare_media.py photos/03_Rates-Barcelos day03`
+   會輸出到 `photos/day03/`、`videos/day03/`，並印出可以直接貼進 `.md` 的區塊；重跑會略過已處理的檔
+3. 新增 `stages/day03.md`，格式照 `stages/day01.md`
+4. 在 `data/stages.json` 把那一段的 `"ready": false` 改成 `true`
+5. 檢查：`uv run python scripts/check_content.py`
+6. `git add -A && git commit -m "Day 3 內容" && git push`
 
-### Markdown 裡的三種特殊區塊
+### Markdown 裡的四種特殊區塊
 
-一般 Markdown 照常寫（`## 標題`、清單、**粗體**、`> 引言`），另外有三種用三個反引號包起來的區塊：
+一般 Markdown 照常寫（`## 標題`、清單、**粗體**、`> 引言`），另外有四種用三個反引號包起來的區塊：
 
 ````markdown
 ```gallery
 day03/IMG_1234.jpg | Barcelos 的中世紀石橋
 day03/IMG_1240.jpg | 公雞
+```
+
+```video
+day03/IMG_1250.mp4 | 市集
 ```
 
 ```youtube
@@ -52,14 +60,15 @@ Q: 巴塞洛斯公雞的傳說是什麼？
 ````
 
 - `gallery`：每行一張照片，`|` 後面是說明（可省略）。路徑從 `photos/` 後面開始寫。
-- `youtube`：每行一支，填 YouTube 網址裡 `v=` 後面那 11 個字元。影片建議上傳成「不公開」再貼 ID。
+- `video`：手機拍的短片（幾秒到一兩分鐘），放在自己網站上。路徑從 `videos/` 後面開始寫。
+- `youtube`：長影片用這個，每行一支，填 YouTube 網址裡 `v=` 後面那 11 個字元。影片建議上傳成「不公開」再貼 ID。
 - `qa`：第一行 `Q:` 是問題；`狀態:` 填「已查證」會顯示綠色，其他（或不寫）一律顯示「未查證」。
 
 ## 地圖
 
 - 底圖資料：Natural Earth 10m（公有領域）。要改地圖範圍才需要重跑：
   `uv run python scripts/build_basemap.py <放 natural-earth geojson 的資料夾>`
-- 路線目前是**示意**：Day 1、Day 2 有手動加中途點（`stages.json` 的 `via`），其他段是站與站的連線。之後用 Apple 健身匯出的 GPX 取代（待做）。
+- 路線目前是**示意**：Day 1、Day 2 有手動加中途點（`stages.json` 的 `via`），其他段是站與站的連線。
 - `mode`：`walk` 實線、`bus` 虛線、`stay` 不畫線。
 
 ## 測試
@@ -77,6 +86,8 @@ uv run pytest -q
 | 打開是空白頁 | 用了雙擊開檔。改用上面的 `python3 -m http.server`。 |
 | 某一段顯示「內容載入失敗（…HTTP 404）」 | `stages.json` 標了 `ready: true`，但 `stages/<id>.md` 不存在或檔名拼錯。跑 `check_content.py` 會列出來。 |
 | 照片是空白格子 | 路徑寫錯或檔案沒放進去。`check_content.py` 會列出找不到的照片。路徑只能用英數、`-`、`_`、`.`、`/`，不能有空白或中文。 |
-| 影片沒出現 | 影片 ID 不是 11 個字元，整行會被略過。 |
-| 改了 CSS／JS 但畫面沒變 | 瀏覽器快取。把 `index.html`／`stage.html` 裡的 `?v=1` 改成 `?v=2`。 |
+| YouTube 影片沒出現 | 影片 ID 不是 11 個字元，整行會被略過。 |
+| 原始照片被 commit 了 | 資料夾名稱不是「兩位數字_」開頭，沒被 `.gitignore` 排除。commit 前用 `git status` 確認只有 `photos/dayXX/`、`videos/dayXX/`。 |
+| `prepare_media.py` 說略過某些檔 | 格式不認得（目前支援 jpg/jpeg/heic/png、mov/mp4/m4v）。 |
+| 改了 CSS／JS 但畫面沒變 | 瀏覽器快取。把 `index.html`／`stage.html` 裡的 `?v=` 後面的數字加 1。 |
 | 推上 GitHub 後線上沒更新 | 到 repo 的 Actions 頁看 `pages build and deployment` 有沒有失敗；`.nojekyll` 不能刪。 |

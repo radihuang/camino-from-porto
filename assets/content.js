@@ -1,8 +1,9 @@
 // 把路段的 Markdown 轉成頁面。除了一般 Markdown，另外認三種區塊：
 //   ```gallery   每行一張：day01/IMG_1234.jpg | 說明
+//   ```video     每行一支短片：day01/IMG_4467.mp4 | 說明（放在 videos/ 底下）
 //   ```youtube   每行一支：影片ID | 說明
 //   ```qa        第一行 Q: 問題；可加一行「狀態: 已查證」；其餘是答案（可用 Markdown）
-const BLOCK_RE = /^```(gallery|youtube|qa)[ \t]*\n([\s\S]*?)^```[ \t]*$/gm;
+const BLOCK_RE = /^```(gallery|video|youtube|qa)[ \t]*\n([\s\S]*?)^```[ \t]*$/gm;
 
 function md(text) {
   return DOMPurify.sanitize(marked.parse(text));
@@ -17,7 +18,7 @@ function renderContent(target, source, onPhoto) {
   target.innerHTML = md(replaced);
   target.querySelectorAll("[data-block]").forEach((holder) => {
     const b = blocks[Number(holder.dataset.block)];
-    const node = { gallery: buildGallery, youtube: buildVideos, qa: buildQA }[b.kind](b.body, onPhoto);
+    const node = { gallery: buildGallery, video: buildClips, youtube: buildVideos, qa: buildQA }[b.kind](b.body, onPhoto);
     holder.replaceWith(node);
   });
 }
@@ -50,6 +51,30 @@ function buildGallery(body, onPhoto) {
     btn.append(img);
     btn.addEventListener("click", () => onPhoto(photos, idx));
     wrap.append(btn);
+  }
+  return wrap;
+}
+
+function buildClips(body) {
+  const wrap = document.createElement("div");
+  wrap.className = "clips";
+  for (const line of body.split("\n").filter((l) => l.trim())) {
+    const [path, cap] = splitLine(line);
+    if (!SAFE_PATH.test(path) || path.includes("..")) continue;
+    const fig = document.createElement("figure");
+    const v = document.createElement("video");
+    v.src = `videos/${path}`;
+    v.poster = `videos/${path.replace(/\.mp4$/, ".jpg")}`;
+    v.controls = true;
+    v.playsInline = true;
+    v.preload = "none";
+    fig.append(v);
+    if (cap) {
+      const c = document.createElement("figcaption");
+      c.textContent = cap;
+      fig.append(c);
+    }
+    wrap.append(fig);
   }
   return wrap;
 }

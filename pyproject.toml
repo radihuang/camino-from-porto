@@ -2,7 +2,10 @@
 name = "camino-from-porto"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pillow>=12.3.0",
+    "pillow-heif>=1.8.1",
+]
 
 [dependency-groups]
 dev = ["pytest>=8"]

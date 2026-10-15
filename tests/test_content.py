@@ -22,12 +22,14 @@ def test_catches_missing_photo_and_bad_video(tmp_path):
     root = make_site(tmp_path)
     (root / "stages" / "day01.md").write_text(
         "```gallery\nday01/ok.jpg | 有\nday01/missing.jpg | 沒有\n```\n"
-        "```youtube\nnot-a-valid-id | x\n```\n", encoding="utf-8")
+        "```youtube\nnot-a-valid-id | x\n```\n"
+        "```video\nday01/nope.mp4 | x\n```\n", encoding="utf-8")
     problems, photos = check(root)
     assert photos == 2
     assert any("missing.jpg" in p for p in problems)
     assert not any("ok.jpg" in p for p in problems)
     assert any("影片 ID" in p for p in problems)
+    assert any("nope.mp4" in p for p in problems)
 
 
 def test_catches_ready_without_markdown_and_unknown_stop(tmp_path):
