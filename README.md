@@ -68,7 +68,11 @@ Q: 巴塞洛斯公雞的傳說是什麼？
 
 - 底圖資料：Natural Earth 10m（公有領域）。要改地圖範圍才需要重跑：
   `uv run python scripts/build_basemap.py <放 natural-earth geojson 的資料夾>`
-- 路線目前是**示意**：Day 1、Day 2 有手動加中途點（`stages.json` 的 `via`），其他段是站與站的連線。
+- 路線來自 OpenStreetMap 的朝聖之路路線（ODbL，頁尾已標註），由 `scripts/build_routes.py` 在路網上算每段的最短路徑，輸出 `data/routes.json`。
+  腳本會把算出的公里數跟 `stages.json` 的計畫公里數比對，差超過 20% 會警告（目前 12 段都在 ±11% 內）。
+  Porto 市區到 Matosinhos 這段 OSM 沒畫，是腳本裡 `MANUAL_PREFIX` 手動補的地標連線。
+  重跑方式見腳本開頭的說明（要先用 Overpass API 下載路網）。
+- 地圖上的站點座標在 `stages.json` 的 `places`，是各站實際經過的地標（教堂、古橋、廣場）。
 - `mode`：`walk` 實線、`bus` 虛線、`stay` 不畫線。
 
 ## 測試

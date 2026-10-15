@@ -5,10 +5,13 @@ const SVG_NS = "http://www.w3.org/2000/svg";
 const LABEL_LEFT = new Set(["labruge", "vilaconde", "porto"]);
 
 async function loadSite() {
-  const [site, base] = await Promise.all([
+  const [site, base, routes] = await Promise.all([
     fetch("data/stages.json").then((r) => r.json()),
     fetch("data/basemap.json").then((r) => r.json()),
+    // 沒有路線檔也照樣能畫（退回站與站連線）
+    fetch("data/routes.json").then((r) => (r.ok ? r.json() : { routes: {} })).catch(() => ({ routes: {} })),
   ]);
+  site.routes = routes.routes;
   site.stages.forEach((s, i) => {
     const prev = site.stages.slice(0, i).reverse().find((p) => p.stop);
     s.from = prev ? prev.stop : null;
@@ -23,6 +26,7 @@ function makeProjector(base) {
 }
 
 function stagePoints(stage, site) {
+  if (site.routes[stage.id]) return site.routes[stage.id].path;
   if (stage.via) return stage.via;
   if (!stage.from || stage.from === stage.stop) return null;
   const a = site.places[stage.from], b = site.places[stage.stop];
@@ -135,8 +139,7 @@ function drawMap(container, { site, base }, opts = {}) {
 
   // 站點
   const stops = el("g", { class: "stops" }, svg);
-  const used = new Set(site.stages.map((s) => s.stop).concat(site.stages.map((s) => s.from)).filter(Boolean));
-  for (const key of used) {
+  for (const key of Object.keys(site.places)) {
     const p = site.places[key];
     const [x, y] = proj(p.lat, p.lon);
     const g = el("g", { class: "stop" + (key === "santiago" ? " stop--goal" : "") }, stops);
