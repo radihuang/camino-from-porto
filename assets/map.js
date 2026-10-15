@@ -6,10 +6,10 @@ const LABEL_LEFT = new Set(["labruge", "vilaconde", "porto"]);
 
 async function loadSite() {
   const [site, base, routes] = await Promise.all([
-    fetch("data/stages.json").then((r) => r.json()),
+    fetch("data/stages.json", { cache: "no-cache" }).then((r) => r.json()),
     fetch("data/basemap.json").then((r) => r.json()),
     // 沒有路線檔也照樣能畫（退回站與站連線）
-    fetch("data/routes.json").then((r) => (r.ok ? r.json() : { routes: {} })).catch(() => ({ routes: {} })),
+    fetch("data/routes.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : { routes: {} })).catch(() => ({ routes: {} })),
   ]);
   site.routes = routes.routes;
   site.stages.forEach((s, i) => {

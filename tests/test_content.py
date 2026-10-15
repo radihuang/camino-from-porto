@@ -41,3 +41,16 @@ def test_catches_ready_without_markdown_and_unknown_stop(tmp_path):
     problems, _ = check(root)  # day01 標 ready 但這個暫存站沒有 day01.md
     assert any("day01" in p and "ready" in p for p in problems)
     assert any("nowhere" in p for p in problems)
+
+
+def test_journal_drops_all_todo_items():
+    from scripts.import_journal import journal_paragraphs
+
+    def todo(text):
+        return {"type": "todo_list_item", "content": [{"type": "paragraph", "content": [{"type": "text", "text": text}]}]}
+
+    def para(text=None):
+        return {"type": "paragraph", "content": [{"type": "text", "text": text}] if text else []}
+
+    doc = {"type": "doc", "content": [todo("肯定"), todo("感恩"), todo("私人待辦"), para("今天走了 25 km"), para(), para("海很漂亮")]}
+    assert journal_paragraphs(json.dumps(doc)) == ["今天走了 25 km", "海很漂亮"]

@@ -20,7 +20,7 @@
 
   if (stage.ready) {
     try {
-      const r = await fetch(`stages/${stage.id}.md`);
+      const r = await fetch(`stages/${stage.id}.md`, { cache: "no-cache" });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       renderContent(content, await r.text(), openLightbox);
     } catch (e) {

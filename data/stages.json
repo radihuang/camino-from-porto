@@ -23,7 +23,7 @@
   "stages": [
     { "id": "porto",  "label": "出發前", "date": "2026-09-15", "dateEnd": "2026-09-17", "title": "Porto 三天", "stop": "porto", "km": 0, "mode": "stay", "ready": false },
     { "id": "day01", "label": "Day 1",  "date": "2026-09-18", "title": "Porto → Labruge", "stop": "labruge", "km": 25, "mode": "walk", "ready": true },
-    { "id": "day02", "label": "Day 2",  "date": "2026-09-19", "title": "Labruge → Vila do Conde → Rates", "stop": "rates", "km": 24, "mode": "walk", "ready": false },
+    { "id": "day02", "label": "Day 2",  "date": "2026-09-19", "title": "Labruge → Vila do Conde → Rates", "stop": "rates", "km": 24, "mode": "walk", "ready": true },
     { "id": "day03", "label": "Day 3",  "date": "2026-09-20", "title": "Rates → Barcelos", "stop": "barcelos", "km": 16.5, "mode": "walk", "ready": false },
     { "id": "day04", "label": "Day 4",  "date": "2026-09-21", "title": "Barcelos → Ponte de Lima", "stop": "pontedelima", "km": 33.5, "mode": "walk", "ready": false },
     { "id": "day05", "label": "Day 5",  "date": "2026-09-22", "title": "Ponte de Lima 停留日", "stop": "pontedelima", "km": 0, "mode": "stay", "ready": false },

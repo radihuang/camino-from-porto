@@ -29,10 +29,12 @@ python3 -m http.server 8731
 1. 原始照片和影片放進 `photos/03_Rates-Barcelos/`（資料夾名稱要「兩位數字_」開頭，才會被排除在版控外）
 2. 處理：`uv run python scripts/prepare_media.py photos/03_Rates-Barcelos day03`
    會輸出到 `photos/day03/`、`videos/day03/`，並印出可以直接貼進 `.md` 的區塊；重跑會略過已處理的檔
-3. 新增 `stages/day03.md`，格式照 `stages/day01.md`
-4. 在 `data/stages.json` 把那一段的 `"ready": false` 改成 `true`
-5. 檢查：`uv run python scripts/check_content.py`
-6. `git add -A && git commit -m "Day 3 內容" && git push`
+3. 日記從 Heptabase 擷取：`uv run python scripts/import_journal.py day03`
+   只讀不寫；會排除所有待辦項目（每天固定的「肯定／感恩／學習／故事」與私人待辦）。印出的是語音輸入原文，貼進 `.md` 前要整理錯字、刪掉不公開的內容（人名、對同伴的抱怨、健康細節）
+4. 新增 `stages/day03.md`，格式照 `stages/day02.md`
+5. 在 `data/stages.json` 把那一段的 `"ready": false` 改成 `true`
+6. 檢查：`uv run python scripts/check_content.py`
+7. `git add -A && git commit -m "Day 3 內容" && git push`
 
 ### Markdown 裡的四種特殊區塊
 
@@ -93,5 +95,6 @@ uv run pytest -q
 | YouTube 影片沒出現 | 影片 ID 不是 11 個字元，整行會被略過。 |
 | 原始照片被 commit 了 | 資料夾名稱不是「兩位數字_」開頭，沒被 `.gitignore` 排除。commit 前用 `git status` 確認只有 `photos/dayXX/`、`videos/dayXX/`。 |
 | `prepare_media.py` 說略過某些檔 | 格式不認得（目前支援 jpg/jpeg/heic/png、mov/mp4/m4v）。 |
+| Heptabase 擷取時報 `unable to open database` | Heptabase 資料庫位置不同。用環境變數指定：`HEPTA_DB=/路徑/hepta.db uv run python scripts/import_journal.py day03` |
 | 改了 CSS／JS 但畫面沒變 | 瀏覽器快取。把 `index.html`／`stage.html` 裡的 `?v=` 後面的數字加 1。 |
 | 推上 GitHub 後線上沒更新 | 到 repo 的 Actions 頁看 `pages build and deployment` 有沒有失敗；`.nojekyll` 不能刪。 |
