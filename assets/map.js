@@ -229,6 +229,10 @@ function fmtDate(s) {
   return out;
 }
 
+function fmtSteps(n) {
+  return `${n.toLocaleString("en-US")} 步`;
+}
+
 function fmtKm(s) {
   if (s.mode === "bus") return "搭車";
   if (s.mode === "stay") return "停留";

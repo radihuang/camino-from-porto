@@ -27,6 +27,8 @@ def check(root: Path) -> tuple[list[str], int]:
         seen.add(sid)
         if s["stop"] not in places:
             problems.append(f"{sid}: 站點 {s['stop']} 不在 places 裡")
+        if "steps" in s and not (isinstance(s["steps"], int) and s["steps"] > 0):
+            problems.append(f"{sid}: steps 要是正整數")
         if s["mode"] not in {"walk", "stay", "bus"}:
             problems.append(f"{sid}: mode 只能是 walk/stay/bus")
         md = root / "stages" / f"{sid}.md"

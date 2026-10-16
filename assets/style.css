@@ -97,7 +97,9 @@ img { max-width: 100%; display: block; }
 .stage-list .lbl { font-family: var(--font-hand); font-size: 20px; color: var(--ochre-deep); white-space: nowrap; }
 .stage-list .ttl { font-size: 16px; overflow-wrap: anywhere; }
 .stage-list .ttl small { display: block; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
-.stage-list .km { font-size: 14px; color: var(--ink-soft); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.stage-list .km { font-size: 14px; color: var(--ink-soft); white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
+.stage-list .km small { display: block; font-size: 12px; color: var(--muted); }
+.totals { flex-wrap: wrap; row-gap: 8px; }
 .badge { display: inline-block; font-size: 12px; color: var(--muted); border: 1px dashed var(--aqua); border-radius: 99px; padding: 0 8px; margin-left: 6px; vertical-align: 2px; white-space: nowrap; }
 
 .foot { color: var(--muted); font-size: 13px; padding: 24px 16px 40px; }

@@ -14,7 +14,7 @@
   document.title = `${stage.label} ${stage.title}｜葡萄牙之路`;
   document.getElementById("lbl").textContent = stage.label;
   document.getElementById("title").textContent = stage.title;
-  document.getElementById("meta").textContent = `2026/${fmtDate(stage)}　·　${fmtKm(stage)}`;
+  document.getElementById("meta").textContent = [`2026/${fmtDate(stage)}`, fmtKm(stage), stage.steps && fmtSteps(stage.steps)].filter(Boolean).join("　·　");
   document.getElementById("pos").textContent = `${stage.index + 1} / ${site.stages.length}`;
   drawMap(document.getElementById("map"), data, { focus: stage.id });
 

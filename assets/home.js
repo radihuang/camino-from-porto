@@ -7,8 +7,9 @@
 
   const walk = site.stages.filter((s) => s.mode === "walk");
   const km = walk.reduce((n, s) => n + s.km, 0);
+  const steps = site.stages.reduce((n, s) => n + (s.steps || 0), 0);
   const totals = document.getElementById("totals");
-  for (const [v, l] of [[walk.length, "步行天數"], [`${Math.round(km)}`, "公里"], [site.stages.filter((s) => s.ready).length, "已整理"]]) {
+  for (const [v, l] of [[walk.length, "步行天數"], [`${Math.round(km)}`, "公里"], [steps.toLocaleString("en-US"), "步"], [site.stages.filter((s) => s.ready).length, "已整理"]]) {
     const d = document.createElement("div");
     const b = document.createElement("b");
     b.textContent = v;
@@ -42,6 +43,11 @@
     const k = document.createElement("span");
     k.className = "km";
     k.textContent = fmtKm(s);
+    if (s.steps) {
+      const st = document.createElement("small");
+      st.textContent = fmtSteps(s.steps);
+      k.append(st);
+    }
     a.append(lbl, ttl, k);
     li.append(a);
     list.append(li);
