@@ -28,7 +28,7 @@
     { "id": "day04", "label": "Day 4",  "date": "2026-09-21", "title": "Barcelos → Ponte de Lima", "stop": "pontedelima", "km": 33.5, "mode": "walk", "steps": 46368, "ready": true },
     { "id": "day05", "label": "Day 5",  "date": "2026-09-22", "title": "Ponte de Lima 停留日", "stop": "pontedelima", "km": 0, "mode": "stay", "steps": 17001, "ready": true },
     { "id": "day06", "label": "Day 6",  "date": "2026-09-23", "title": "Ponte de Lima → Rubiães", "stop": "rubiaes", "km": 18, "mode": "walk", "steps": 35975, "ready": true },
-    { "id": "day07", "label": "Day 7",  "date": "2026-09-24", "title": "Rubiães → Tui", "stop": "tui", "km": 19.5, "mode": "walk", "steps": 35819, "ready": false },
+    { "id": "day07", "label": "Day 7",  "date": "2026-09-24", "title": "Rubiães → Tui", "stop": "tui", "km": 19.5, "mode": "walk", "steps": 35819, "ready": true },
     { "id": "day08", "label": "Day 8",  "date": "2026-09-25", "title": "Tui → O Porriño", "stop": "porrino", "km": 16.5, "mode": "walk", "steps": 29497, "ready": true },
     { "id": "day09", "label": "Day 9",  "date": "2026-09-26", "title": "O Porriño → Redondela", "stop": "redondela", "km": 15.5, "mode": "walk", "steps": 33493, "ready": true },
     { "id": "day10", "label": "Day 10", "date": "2026-09-27", "title": "Redondela → Pontevedra", "stop": "pontevedra", "km": 19.5, "mode": "walk", "steps": 33746, "ready": true },
