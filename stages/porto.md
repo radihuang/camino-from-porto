@@ -35,9 +35,9 @@ Serralves 由 1989 年成立的 Serralves 基金會管理。當代藝術博物�
 ```qa
 Q: Casa de Serralves（粉紅別墅）是誰設計的？
 狀態: 未查證
-主要由法國建築師 Charles Siclis 設計，1925 到 1944 年間為維澤拉伯爵（Carlos Alberto Cabral）興建，葡萄牙建築師 José Marques da Silva 參與協調與完成。是葡萄牙最重要的 Art Déco 住宅之一。
+1925 到 1944 年間為維澤拉伯爵（Carlos Alberto Cabral）興建，是葡萄牙最重要的 Art Déco 住宅之一。Serralves 官方的說法是「審慎地」歸屬給法國建築師 Charles Siclis，與全程參與施工的波多建築師 José Marques da Silva，作者歸屬至今沒有定論。
 
-室內出自巴黎 Art Déco 名家之手：Jacques-Émile Ruhlmann 設計了餐廳、大廳與沙龍，二樓大廳上方的天窗是 René Lalique 的作品。庭園由 Jacques Gréber 規劃，把法式幾何軸線和英式風景園結合在一起。
+室內出自巴黎 Art Déco 名家之手：Émile-Jacques Ruhlmann 設計了餐廳、大廳、沙龍、門廳與撞球室，二樓大廳上方的天窗是 René Lalique 的作品，分隔公共區與私人區的鍛鐵門出自 Edgar Brandt。庭園由 Jacques Gréber 規劃，把法式幾何軸線和英式風景園結合在一起。
 
 旁邊 1999 年的 Siza 美術館是一個白色量體，粉紅與白，正好形成新舊對話。
 ```
