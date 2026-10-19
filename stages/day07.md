@@ -8,36 +8,44 @@
 
 ## 路上的問題
 
-走在路上問 AI 的問題。答案由 AI 整理，標「未查證」的還沒有逐條核對，參考就好。
+走在路上問 AI 的問題。答案由 AI 整理，2026 年 10 月回家後另外查證過一輪：「已查證」是人名、年代、數字都核對過；「部分查證」是查過一部分，錯的已經更正；「未查證」的還沒核對，參考就好。
 
 ```qa
 Q: 今天要經過西葡邊界去圖伊，圖伊是什麼樣的城市？
-狀態: 未查證
+狀態: 部分查證
 Tui 是加利西亞南部、米紐河北岸的小山城，人口一萬多，和葡萄牙的 Valença 隔河相望。中世紀起就是主教座城。
 
 這裡距離聖地牙哥約 115 公里，很多人為了拿到「最後 100 公里」的朝聖證書，從這裡起步，所以過了 Tui，路上明顯熱鬧起來。
 
 山頂的主教座堂外觀像堡壘，有雉堞、厚牆，因為它同時也是邊境的防禦工事。過橋之後，時間要調快一小時。
+
+已核對：與瓦倫薩隔河相望、主教座堂西門、時差。人口與距離尚未核對。
+
+資料來源：[Turismo Rías Baixas：Catedral de Tui](https://turismoriasbaixas.com/es/descubre/patrimonio-rias-baixas/patrimonio-religioso/catedral-de-tui)
 ```
 
 ```qa
 Q: （介紹圖伊時延伸）圖伊—瓦倫薩國際大橋
-狀態: 未查證
+狀態: 已查證
 1886 年 3 月 25 日啟用的雙層鐵橋，上層走鐵路、下層走人車。常被誤傳是艾菲爾設計，其實是西班牙工程師 Pelayo Mancebo y Ágreda 的作品（波多的瑪麗亞·皮亞橋才是艾菲爾公司做的）。
 
 橋通了以後，兩岸不必再等渡船，但海關仍守在橋頭，直到 1990 年代歐盟單一市場與申根協定，才拆除關卡。
+
+資料來源：[Visit Rio Minho](https://visitriominho.eu/en/pin-point/tui-valenca-international-bridge/)
 ```
 
 ```qa
 Q: 這是圖伊大教堂內部，請根據官方或文獻介紹這座教堂的建築和歷史
-狀態: 未查證
+狀態: 部分查證
 Tui 主教座堂位在城內最高處，12 世紀動工時是羅馬式，後來多次改建成哥德式，主立面約建於 1225 年。當時加利西亞屬於雷昂王國，Tui 是和葡萄牙接壤的戰略要地，所以教堂兼具護城功能。
 
 它是一座「混血」建築：後殿、十字翼、側廊是羅馬式；中殿、拱頂和主入口是哥德式，主入口被視為伊比利半島最早的哥德式作品之一。
 
-**中殿裡那幾道橫跨的石拱**是最特別的地方。原本的羅馬式牆體撐不住後來加上的高聳哥德拱頂，牆往外傾，後人只好在室內加設扶壁，等於把飛扶壁搬進了室內，用受壓的支撐抵抗拱頂的側推力。這些支撐拱是後來分好幾個時期陸續加上去的。
+**中殿裡那幾道橫跨的石拱**是最特別的地方。原本的羅馬式牆體撐不住後來加上的高聳哥德拱頂，牆往外傾，後人只好在室內加設扶壁，等於把飛扶壁搬進了室內，用受壓的支撐抵抗拱頂的側推力。這些支撐拱是後來分好幾個時期陸續加上去的，各道拱的年代與成因查不到可靠資料。
 
-迴廊建於 13 世紀前半，是西妥會哥德式，也是加利西亞所有主教座堂中唯一保存下來的中世紀迴廊。
+迴廊建於 13 世紀前半，是西妥會哥德式，也是加利西亞所有主教座堂中唯一保存下來的中世紀迴廊（這點尚未核對）。
+
+資料來源：[Turismo Rías Baixas：Tui Cathedral](https://www.turismoriasbaixas.com/en/descubre/rias-baixas-heritage/religious-heritage/tui-cathedral-heritage)
 ```
 
 ```qa
@@ -80,12 +88,14 @@ Q: 我今天走到西班牙了，請教我 20 句常用的西班牙文
 
 ```qa
 Q: 如果多走靈性之路（Variante Espiritual），行程會有什麼改變？
-狀態: 未查證
+狀態: 部分查證
 靈性之路從 Pontevedra 分岔，在 Padrón 和中央路線會合，比中央路線多約一天：
 
 Pontevedra → Armenteira 修道院（約 23–24 公里，有明顯爬坡）→ Vilanova de Arousa（約 24 公里，經過「石頭與水之路」Ruta da Pedra e da Auga）→ 搭船到 Pontecesures → 走到 Padrón。
 
 搭船是官方認可的路段，不影響朝聖證書。發船時間依潮汐調整，夏季每天兩班，出發前一天要向當地確認。這是整條葡萄牙之路上唯一要「坐船」的一段。
+
+資料來源：[Viaje Camino de Santiago](https://viajecaminodesantiago.com/camino-portugues-variante-espiritual/)、[Albergues Camino Santiago](https://www.alberguescaminosantiago.com/camino-portugues/variante-espiritual/etapa-vilanova-de-arousa-pontecesures-padron)
 ```
 
 ```qa
@@ -95,7 +105,7 @@ Q: 加利西亞有什麼美食推薦？
 - **Pimientos de Padrón**：煎小青椒，多數不辣，偶爾會中一顆很辣的。
 - **Caldo gallego**：白豆、蕪菁葉和豬肉熬的湯。
 - **Tarta de Santiago**：杏仁蛋糕，表面用糖粉灑出聖雅各十字架。
-- **酒**：Tui 屬於下海灣（Rías Baixas）產區，白酒 Albariño。
+- **酒**：下海灣（Rías Baixas）產區的白酒 Albariño。Tui 附近是這個產區的 Condado do Tea 與 O Rosal 兩個子產區。
 
 午間套餐叫 menú del día（前菜、主菜、甜點加一杯酒）。西班牙的晚餐普遍 20:30 以後才開始。
 ```
@@ -132,6 +142,12 @@ Q: 路上看到另一種塔吊，這是比較輕型的嗎？
 
 ```qa
 Q: 這是 Tui 路上的行道樹，請問是什麼樹？
-狀態: 未查證
-從心形、有鋸齒的葉子、秋季變色和當地的栽植習慣判斷，偏向**椴樹**，可能是大葉椴（Tilia platyphyllos），但也可能是銀椴或歐洲椴。分辨方法是看葉背：大葉椴偏淡綠，銀椴有銀白色的絨毛。
+狀態: 部分查證
+當時 AI 判斷是椴樹，回家後重看照片，**椴樹的可能性低**：照片裡不少葉片帶 2–3 個淺裂，椴樹的葉子不會分裂，也看不到椴樹 9 月該有的帶苞片果序。
+
+比較可能是**白桑**（Morus alba，西文 morera）：同一棵樹上有不裂和淺裂的葉子，邊緣粗鋸齒，Pontevedra 的觀賞樹目錄也有收錄。樹形是重度截頂修剪，這是西班牙廣場常見的做法。懸鈴木是第二候選，但它的葉子幾乎都明顯掌裂。
+
+照片是逆光仰拍，信心中等。要確認可以折斷葉柄，看有沒有白色乳汁（桑樹有，椴樹和懸鈴木沒有）。
+
+資料來源：[Pontevedra 觀賞樹目錄：Morus alba](https://oma.webs.uvigo.es/Natureza/Biodiversidade/CatalogoFaunaFlora/BiodiversidadePontevedra/arboresornamentais_pontevedra/Morus_alba.pdf)
 ```

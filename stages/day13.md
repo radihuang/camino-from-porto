@@ -14,7 +14,7 @@
 
 ## 路上的問題
 
-走在路上問 AI 的問題。答案由 AI 整理，標「未查證」的還沒有逐條核對，參考就好。
+走在路上問 AI 的問題。答案由 AI 整理，2026 年 10 月回家後另外查證過一輪：「已查證」是人名、年代、數字都核對過；「部分查證」是查過一部分，錯的已經更正；「未查證」的還沒核對，參考就好。
 
 ```qa
 Q: 我今天走到了聖地牙哥，請你用城市發展的角度來介紹這座城市
@@ -28,10 +28,12 @@ Obradoiro 廣場四周，剛好把宗教、行政、醫療慈善與教育四種�
 
 ```qa
 Q: 西薩的 CGAC 是什麼？
-狀態: 未查證
-CGAC 是 Centro Galego de Arte Contemporánea（加利西亞當代藝術中心），Álvaro Siza 設計，1993 年落成。它用當地的花崗岩量體嵌進舊城邊緣，緊鄰 San Domingos de Bonaval 修道院。
+狀態: 部分查證
+CGAC 是 Centro Galego de Arte Contemporánea（加利西亞當代藝術中心），Álvaro Siza 設計，1988 年到 1993 年興建。它用當地的花崗岩量體嵌進舊城邊緣，緊鄰 San Domingos de Bonaval 修道院。
 
 重點不在單看一棟建築，而是它怎麼用高差、樓梯、坡道和視線，把中世紀修道院、歷史地景、當代美術館和公共公園接在一起。
+
+資料來源：[Wikipedia：Centro Galego de Arte Contemporánea](https://en.wikipedia.org/wiki/Centro_Galego_de_Arte_Contempor%C3%A1nea)
 ```
 
 ```qa
@@ -50,4 +52,6 @@ Q: （朝聖布章）上面寫的是什麼？
 左邊的布章寫著「PERDIDO ES OTRO MODO DE ESTAR AVENTURADO」，意思是「迷路，也是另一種冒險的方式」，上面有背包、箭頭、太陽和黃色扇貝，象徵出發、指引、希望與探索。
 
 右邊寫著「NO ES EL DESTINO, ES EL CAMINO」：「重要的不是目的地，而是這條路。」下方是 SANTIAGO DE COMPOSTELA，配上主教座堂、山路、森林和扇貝。
+
+右邊布章的字樣回家後對照照片確認過；左邊的全文還沒確認。
 ```

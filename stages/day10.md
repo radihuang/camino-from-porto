@@ -12,7 +12,7 @@
 
 ## 路上的問題
 
-走在路上問 AI 的問題。答案由 AI 整理，標「未查證」的還沒有逐條核對，參考就好。
+走在路上問 AI 的問題。答案由 AI 整理，2026 年 10 月回家後另外查證過一輪：「已查證」是人名、年代、數字都核對過；「部分查證」是查過一部分，錯的已經更正；「未查證」的還沒核對，參考就好。
 
 ```qa
 Q: 猶太人的上帝怎麼稱呼？
@@ -24,8 +24,10 @@ Q: 猶太人的上帝怎麼稱呼？
 
 ```qa
 Q: Pontevedra 這個活動看板寫的是什麼？
-狀態: 未查證
-看板是加利西亞語。右邊的 *Axenda Deportiva* 是運動活動表，*Percorridos das carreiras* 是比賽路線，當時 Pontevedra 正在辦鐵人三項世界錦標賽的總決賽。左邊的 *Somos música* 是音樂活動，*Feira* 是市集。
+狀態: 部分查證
+看板是加利西亞語。右邊的 *Axenda Deportiva* 是運動活動表，*Percorridos das carreiras* 是比賽路線，當時 Pontevedra 正在辦 2026 年鐵人三項世界錦標賽總決賽（World Triathlon Championship Finals，9 月 23 到 27 日）。左邊的 *Somos música* 是音樂活動，*Feira* 是市集。
 
-順便學幾個加利西亞語：*Xoves*（星期四）、*Venres*（星期五）、*Sábado*、*Domingo*；*Concello de Pontevedra* 是市政府。
+順便學幾個加利西亞語：*Xoves*（星期四）、*Venres*（星期五）、*Sábado*、*Domingo*；*Concello de Pontevedra* 是市政府。（加利西亞語單字尚未核對）
+
+資料來源：[World Triathlon](https://triathlon.org/news/pontevedra-to-host-the-2026-championship-finals-on-september-23--27)
 ```

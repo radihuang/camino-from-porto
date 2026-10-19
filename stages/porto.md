@@ -1,10 +1,10 @@
 ## 路上的問題
 
-走在路上問 AI 的問題。答案由 AI 整理，標「未查證」的還沒有逐條核對，參考就好。
+走在路上問 AI 的問題。答案由 AI 整理，2026 年 10 月回家後另外查證過一輪：「已查證」是人名、年代、數字都核對過；「部分查證」是查過一部分，錯的已經更正；「未查證」的還沒核對，參考就好。
 
 ```qa
 Q: 請介紹波多的城市發展史；我住的 Ribeira 一帶是老城區嗎？
-狀態: 未查證
+狀態: 部分查證
 **一個城市替一個國家命名。** 羅馬時代，杜羅河口南岸的聚落叫 Cale，北岸的港口叫 Portus，合稱 Portus Cale，後來演變成「Portugal」。
 
 **中世紀**以花崗岩山丘上的主教座堂（Sé）為核心。1387 年若昂一世在這裡迎娶英格蘭的菲莉帕，他們的兒子「航海家恩里克王子」就生在波多。波多人的暱稱 Tripeiros（吃牛肚的人），相傳來自 1415 年遠征休達時，市民把肉都捐給船隊，自己只留下內臟。
@@ -16,11 +16,15 @@ Q: 請介紹波多的城市發展史；我住的 Ribeira 一帶是老城區嗎�
 **20 世紀至今**，Fernando Távora 開創「波多學派」，傳到 Álvaro Siza（1992 年普立茲克獎）與 Souto de Moura（2011 年普立茲克獎）。1996 年歷史中心列入世界遺產。
 
 至於 Ribeira：聖約翰街（Rua de São João）是 18 世紀阿爾馬達時期在中世紀巷弄中切出的較寬直坡道，連接河岸碼頭與上城，剛好站在「中世紀肌理」與「啟蒙時代規劃」的交界上。
+
+已核對：聖約翰街開闢於 1765–68 年、兩位普立茲克獎得主的年份。其餘年代與典故尚未核對。
+
+資料來源：[U.Porto 論文](https://repositorio-aberto.up.pt/handle/10216/110399)
 ```
 
 ```qa
 Q: 介紹 Serralves 當代藝術博物館
-狀態: 未查證
+狀態: 部分查證
 Serralves 由 1989 年成立的 Serralves 基金會管理。當代藝術博物館由 Álvaro Siza 設計，1999 年開館，收藏以 1960 年代至今的作品為主，展覽會依策展重組，不是固定的常設展。
 
 建築沿著莊園地形展開，展廳呈 U 形，長廊、轉角、開口與窗景交替，把庭院、樹木和遠景引進來，讓白盒子展廳和自然景觀不斷切換。
@@ -29,27 +33,33 @@ Serralves 由 1989 年成立的 Serralves 基金會管理。當代藝術博物�
 
 2019 年園區加了一條樹頂步道（Treetop Walk），由建築師 Carlos Castanheira 設計，全木構造，約 250 公尺長，架在樹冠層裡。
 
-2023 年底開放的 Álvaro Siza 翼館，則被 Serralves 當成「建築收藏」的一部分，像是從樹林裡自然長出來的新枝。
+2023 年 10 月揭幕的 Álvaro Siza 翼館（2024 年 2 月起放入收藏與 Siza 建築檔案展），則被 Serralves 當成「建築收藏」的一部分，像是從樹林裡自然長出來的新枝。
+
+資料來源：[Serralves 官網 Treetop Walk](https://www.serralves.pt/en/institucional-serralves/5.8.-ok_-parque---treetop-walk/)、[Serralves 官網 Siza Wing](https://www.serralves.pt/en/institucional-serralves/museu-ala-siza/)、[Dezeen 2024-02-26](https://www.dezeen.com/2024/02/26/serralves-museum-alvaro-siza-wing-porto/)
 ```
 
 ```qa
 Q: Casa de Serralves（粉紅別墅）是誰設計的？
-狀態: 未查證
+狀態: 部分查證
 1925 到 1944 年間為維澤拉伯爵（Carlos Alberto Cabral）興建，是葡萄牙最重要的 Art Déco 住宅之一。Serralves 官方的說法是「審慎地」歸屬給法國建築師 Charles Siclis，與全程參與施工的波多建築師 José Marques da Silva，作者歸屬至今沒有定論。
 
-室內出自巴黎 Art Déco 名家之手：Émile-Jacques Ruhlmann 設計了餐廳、大廳、沙龍、門廳與撞球室，二樓大廳上方的天窗是 René Lalique 的作品，分隔公共區與私人區的鍛鐵門出自 Edgar Brandt。庭園由 Jacques Gréber 規劃，把法式幾何軸線和英式風景園結合在一起。
+室內出自巴黎 Art Déco 名家之手：Émile-Jacques Ruhlmann 設計了餐廳、大廳、沙龍、門廳與撞球室，一樓大廳的天窗是 René Lalique 的作品，分隔公共區與私人區的鍛鐵門出自 Edgar Brandt；1933 年起由 Ruhlmann 的姪子 Alfred Porteneuve 接手室內工作。庭園由 Jacques Gréber 規劃，把法式幾何軸線和英式風景園結合在一起。
 
 旁邊 1999 年的 Siza 美術館是一個白色量體，粉紅與白，正好形成新舊對話。
+
+資料來源：[Serralves 官網 Casa 建築](https://www.serralves.pt/en/institucional-serralves/casa-de-serralves-arquitetura/)
 ```
 
 ```qa
 Q: 請根據官方網站介紹波多大教堂
-狀態: 未查證
-波多大教堂（Sé do Porto）經過約 900 年的改造，不是單一風格的建築。正立面混合了中世紀、18 世紀巴洛克與 20 世紀修復的元素；13 世紀後期的玫瑰窗、18 世紀的入口改造，都是不同時期疊上去的。
+狀態: 部分查證
+波多大教堂（Sé do Porto）經過約 900 年的改造，不是單一風格的建築。正立面混合了中世紀、18 世紀巴洛克與 20 世紀修復的元素；羅曼式的玫瑰窗、18 世紀的入口改造，都是不同時期疊上去的。
 
 三廊、厚重石柱與堡壘般的外觀是羅曼式的基礎。但今天看到的樸素室內，其實跟 20 世紀的修復有關：當時移除了灰泥、祭壇與墓葬紀念物。所以這種「純粹中世紀」的樣子，本身也包含了修復者的重新詮釋。主祭壇則在 17、18 世紀巴洛克化，有鍍金木作與管風琴。
 
-迴廊自 1385 年起建，尖拱與柱列組織出光影。牆上的藍白磁磚（azulejos）取材自《雅歌》，象徵基督與教會的結合。
+迴廊自 1385 年起建，尖拱與柱列組織出光影。牆上的藍白磁磚（azulejos）是 1729–1731 年在里斯本製作、出自 Valentim de Almeida，取材自《雅歌》，象徵基督與教會的結合。
+
+資料來源：[Portoalities](https://portoalities.com/en/best-places-see-azulejo-tiles-porto/)、[Visit Porto](https://visitporto.travel/en-GB/poi/5cd04b4df979e000019f80d1)
 ```
 
 ```qa
@@ -58,12 +68,16 @@ Q: 卡爾莫教堂柱頭上懸吊下來的葉子，是什麼植物？
 不是葡萄牙的某種在地植物，而是**莨苕葉**（acanthus）石雕，比較精確的說法是「巴洛克化的莨苕卷葉飾」。
 
 這種紋樣可以追溯到古希臘的科林斯柱式：葉片從柱頭下部向外翻、層層展開。經過羅馬、文藝復興、巴洛克到洛可可，葉子被拉長、捲曲、下垂，還混進卷草紋與花環。Igreja do Carmo 的立面就是葡萄牙晚期巴洛克到洛可可的華麗語彙。
+
+莨苕葉是古典柱頭的通例，但照片上的是不是莨苕，要看原圖才能確認。
 ```
 
 ```qa
 Q: Serralves 的展覽在講什麼？（Vexation of Spirit 與 Pedro Henriques）
-狀態: 未查證
-**Vexation of Spirit** 是 Duerckheim Collection 與 Serralves 合作的展覽，34 位藝術家、90 件作品，透過宗教、社會與戰爭，探討道德不安、歷史意識、權威、從眾與消費文化。
+狀態: 部分查證
+**Vexation of Spirit** 是 Duerckheim Collection 與 Serralves 合作的展覽，展期 2026 年 5 月 15 日到 11 月初，34 位藝術家、約 90 件作品，透過宗教、社會與戰爭，探討道德不安、歷史意識、權威、從眾與消費文化。
 
-**Pedro Henriques** 的作品聚焦在數位影像與手工製作之間的矛盾，媒材橫跨雕塑、版畫、素描，從手工與數位、即興與程序、平面與立體之間，去看影像怎麼被生產、傳播和接收。
+**Pedro Henriques** 的展覽叫《Espasmo Quadrado》，2026 年 5 月 22 日到 10 月 11 日，策展人 Ricardo Nicolau，是他第一次在美術館辦個展。他的作品聚焦在數位影像與手工製作之間的矛盾，媒材橫跨雕塑、版畫、素描，從手工與數位、即興與程序、平面與立體之間，去看影像怎麼被生產、傳播和接收。（作品詮釋部分未核對）
+
+資料來源：[Visit Portugal](https://www.visitportugal.com/en/node/519601)、[Serralves：Duerckheim Collection](https://www.serralves.pt/en/ciclo-serralves/2605-colecao-duerckheim)、[Serralves：Pedro Henriques](https://www.serralves.pt/en/ciclo-serralves/2604-pedro-henriques/)
 ```
