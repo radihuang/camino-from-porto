@@ -1,3 +1,7 @@
+```film
+day01/day01_edit.mp4
+```
+
 ## 照片
 
 ```gallery

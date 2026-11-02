@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BLOCK_RE = re.compile(r"^```(gallery|video|youtube)[ \t]*\n(.*?)^```[ \t]*$", re.M | re.S)
+BLOCK_RE = re.compile(r"^```(gallery|film|video|youtube)[ \t]*\n(.*?)^```[ \t]*$", re.M | re.S)
 
 
 def check(root: Path) -> tuple[list[str], int]:
@@ -43,7 +43,7 @@ def check(root: Path) -> tuple[list[str], int]:
                     photos += 1
                     if ".." in ref or not (root / "photos" / ref).is_file():
                         problems.append(f"{sid}: 找不到照片 photos/{ref}")
-                elif kind == "video":
+                elif kind in ("video", "film"):
                     if ".." in ref or not (root / "videos" / ref).is_file():
                         problems.append(f"{sid}: 找不到影片 videos/{ref}")
                 elif not re.fullmatch(r"[\w-]{11}", ref):
